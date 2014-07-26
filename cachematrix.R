@@ -3,6 +3,7 @@
 ## These functions are to be called as cacheSolve(makeCacheMatrix(M)) 
 ## where M is an invertible matrix.
 
+
 ## The nested function which stores the cached values and 
 ## sends either the cached value or the calculated value to the parent function
 
@@ -25,8 +26,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
+## The actual parent function calculating the solve if not available in cache
 
 cacheSolve <- function(x,...){
+
 ## Check whether the inverse is already cached
       inverse <- x$getInverse()
       if(!is.null(inverse)) {
